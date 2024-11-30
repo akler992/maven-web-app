@@ -1,19 +1,19 @@
-pipeline {  
-
+pipeline {
     agent any
-        
-    tools{
-        maven "Maven-3.9.9"
+    
+    tools {
+        maven "maven-3.9.9"
     }
+
     stages {
-        stage('Clone') {
+        stage('Git Clone') {
             steps {
-               git 'https://github.com/ashokitschool/maven-web-app.git'
+                git 'https://github.com/ashokitschool/maven-web-app.git'
             }
         }
-        stage('Build') {
+        stage('Maven Build') {
             steps {
-               sh 'mvn clean package'
+                sh 'mvn clean package'
             }
         }
     }
