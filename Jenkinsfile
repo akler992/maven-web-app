@@ -6,12 +6,12 @@ pipeline {
     }
 
     stages {
-        stage('Git Clone') {
+        stage('Git Clone IS FIRST') {
             steps {
                 git 'https://github.com/ashokitschool/maven-web-app.git'
             }
         }
-        stage('Maven Build') {
+        stage('Maven Build IS SECOND') {
             steps {
                 sh 'mvn clean package'
             }
